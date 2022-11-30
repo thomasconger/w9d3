@@ -1,0 +1,18 @@
+.square {
+    width: 98px;
+    height: 98px;
+    border: 1px;
+    border-color: black;
+    border-style: solid;
+    list-style: none;
+}
+
+.square:hover {
+    background-color: yellow;
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;
+}
