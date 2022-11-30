@@ -7,4 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let ttt = document.querySelector(".ttt");
   let g = new Game();
   let v = new View(g,ttt);
+
+  ttt.addEventListener("click",v.handleClick )
 });
+
+// add event listener for all of the li in ul

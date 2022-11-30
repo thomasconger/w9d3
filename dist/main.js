@@ -15,7 +15,7 @@
   \**********************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const View = __webpack_require__(/*! ./ttt-view */ \"./src/ttt-view.js\");// require appropriate file\nconst Game = __webpack_require__(/*! ../ttt_node/game */ \"./ttt_node/game.js\");// require appropriate file\n\ndocument.addEventListener(\"DOMContentLoaded\", () => {\n  // Your code here\n\n  let ttt = document.querySelector(\".ttt\");\n  let g = new Game();\n  let v = new View(g,ttt);\n});\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("const View = __webpack_require__(/*! ./ttt-view */ \"./src/ttt-view.js\");// require appropriate file\nconst Game = __webpack_require__(/*! ../ttt_node/game */ \"./ttt_node/game.js\");// require appropriate file\n\ndocument.addEventListener(\"DOMContentLoaded\", () => {\n  // Your code here\n\n  let ttt = document.querySelector(\".ttt\");\n  let g = new Game();\n  let v = new View(g,ttt);\n\n  ttt.addEventListener(\"click\",v.handleClick )\n});\n\n// add event listener for all of the li in ul\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
@@ -25,7 +25,7 @@ eval("const View = __webpack_require__(/*! ./ttt-view */ \"./src/ttt-view.js\");
   \*************************/
 /***/ ((module) => {
 
-eval("class View {\n  constructor(game, el) {\n    el.appendChild(this.setupBoard());\n  }\n\n  setupBoard() {\n    let parent = document.createElement(\"ul\");\n    for (let i = 0; i < 9; i++) {\n      let child = document.createElement(\"li\");\n      child.classList.add(\"square\");\n      child.dataset.row = Math.floor(i/3);\n      child.dataset.col = (i%3);\n      parent.appendChild(child);\n    }\n    return parent;\n  }\n  \n  bindEvents() {}\n\n  handleClick(e) {}\n\n  makeMove(square) {}\n\n}\n\nmodule.exports = View;\n\n\n//# sourceURL=webpack:///./src/ttt-view.js?");
+eval("class View {\n  constructor(game, el) {\n    el.appendChild(this.setupBoard());\n  }\n\n  setupBoard() {\n    let parent = document.createElement(\"ul\");\n    for (let i = 0; i < 9; i++) {\n      let child = document.createElement(\"li\");\n      child.classList.add(\"square\");\n      child.dataset.row = Math.floor(i/3);\n      child.dataset.col = (i%3);\n      parent.appendChild(child);\n    }\n    return parent;\n  }\n\n  bindEvents() {}\n\n  handleClick(e) {\n    // check if valid position\n    // fetch the token to make a move\n    // modify the li value to reflect the token\n    // modify the li class to reflect that a move has been made\n    console.log(e.target)\n  }\n\n  makeMove(square) {}\n\n}\n\nmodule.exports = View;\n\n\n//# sourceURL=webpack:///./src/ttt-view.js?");
 
 /***/ }),
 
