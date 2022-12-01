@@ -5,14 +5,28 @@
     border-color: black;
     border-style: solid;
     list-style: none;
+    font-size: 50px;
+    line-height: 2;
+    font-family: Helvetica, sans-serif;
+    text-align: center;
 }
+
 
 .square:hover {
     background-color: yellow;
 }
 
+.square.taken {
+    background-color: grey;
+}
+
+
 ul {
     display: flex;
     flex-wrap: wrap;
     width: 300px;
+    border: 1px;
+    border-color: black;
+    border-style: solid;
+    padding: 0px;
 }

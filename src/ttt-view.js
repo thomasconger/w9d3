@@ -1,6 +1,7 @@
 class View {
   constructor(game, el) {
     el.appendChild(this.setupBoard());
+    this.game = game
   }
 
   setupBoard() {
@@ -18,14 +19,26 @@ class View {
   bindEvents() {}
 
   handleClick(e) {
-    // check if valid position
-    // fetch the token to make a move
     // modify the li value to reflect the token
     // modify the li class to reflect that a move has been made
-    console.log(e.target)
+    this.makeMove( [ e.target.dataset.row, e.target.dataset.col ] )
   }
 
-  makeMove(square) {}
+  makeMove(square) {
+    // if (this.game.playMove(square)) {
+      // console.log(this.game.playMove())
+      // console.log(square[0])
+      let chosenSpot = document.querySelector(`[data-row='${square[0]}'][data-col='${square[1]}']`)
+      chosenSpot.classList.add("taken")
+      this.game.playMove(square)
+      console.log(this.game.currentPlayer)
+      chosenSpot.innerHTML = `${this.game.currentPlayer.toUpperCase()}`
+      console.log(this.game.currentPlayer)
+
+      // console.log(this.game.currentPlayer)
+      // chosenSpot.value = this.game.currentPlayer
+    // }
+  }
 
 }
 
