@@ -12,6 +12,7 @@
 }
 
 
+
 .square:hover {
     background-color: yellow;
 }
@@ -20,6 +21,9 @@
     background-color: grey;
 }
 
+.taken.winner {
+    background-color: green;
+}
 
 ul {
     display: flex;

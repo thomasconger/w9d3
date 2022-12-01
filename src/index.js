@@ -8,9 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let g = new Game();
   let v = new View(g,ttt);
 
-  let boundFunc = v.handleClick.bind(v)
+  let boundFunc = v.handleClick.bind(v);
 
-  ttt.addEventListener("click",boundFunc )
+  ttt.addEventListener("click",boundFunc);
 });
-
-// add event listener for all of the li in ul
